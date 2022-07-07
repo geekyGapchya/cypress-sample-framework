@@ -1,0 +1,11 @@
+{
+    "baseUrl" : "https://www.makemytrip.com/",
+    "ignoreTestFiles" : ["**/1-getting-started/*", "**/2-advanced-examples/*"],
+    "viewportHeight" : 1080,
+    "viewportWidth" : 1920,
+    "chromeWebSecurity": false,
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+      } 
+}
