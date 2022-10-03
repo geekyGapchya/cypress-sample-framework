@@ -1,7 +1,7 @@
 export const data = [
     {
-        name: "flight Booking",
-        FlightDetails: {
+        name: "Search Flight",
+        searchFlights: {
             fromCity: "PNQ",
             toCity:"IXL",
         }
