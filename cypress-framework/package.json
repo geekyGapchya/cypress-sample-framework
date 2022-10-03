@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "cypress": "8.3.0"
-  },
   "scripts": {
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
     "pretest": "npm run clean:reports",
@@ -21,5 +18,8 @@
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.0.1"
+  },
+  "devDependencies": {
+    "cypress": "^10.9.0"
   }
 }
