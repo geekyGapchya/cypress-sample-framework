@@ -4,17 +4,19 @@ module.exports = defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
   chromeWebSecurity: false,
+  video: false,
+  screenshotOnRunFailure: true,
+  screenshotsFolder: "cypress/reports/mochareports/assets",
   retries: {
-    runMode: 2,
+    runMode: 0,
     openMode: 0,
   },
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json'
+  },
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
-    },
     baseUrl: 'https://www.makemytrip.com/',
-    excludeSpecPattern: ['**/1-getting-started/*', '**/2-advanced-examples/*'],
+    // excludeSpecPattern: ['**/1-getting-started/*', '**/2-advanced-examples/*'],
   },
 })

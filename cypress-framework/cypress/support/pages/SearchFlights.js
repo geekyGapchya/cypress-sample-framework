@@ -1,4 +1,4 @@
-import { utils } from "../../support/utils/Utils"
+import { utils } from "../utils/Utils"
 
 const fromCityLocator = 'input[data-cy="fromCity"]'
 const toCityLocator = 'input[data-cy="toCity"]'
@@ -6,7 +6,7 @@ const fromCityTxtBoxLocator = '[placeholder="From"]'
 const toCityTxtBoxLocator = '[placeholder="To"]'
 const deptDateLocator = '[data-cy="departure"]'
 
-export class BookFlights {
+export class SearchFlights {
 
     enterFromandTocity(fromCity, toCity) {
         utils.click(fromCityLocator)
@@ -20,4 +20,4 @@ export class BookFlights {
     }
 
 }
-export const onbookFlights = new BookFlights()
+export const onsearchFlights = new SearchFlights()
