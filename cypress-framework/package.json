@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "clean:reports": "if exist cypress\\reports rmdir /s/q cypress\\reports && mkdir cypress\\reports mkdir cypress\\reports\\mochareports", 
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run --env grepTags=@Search",
+    "combine-reports": "npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "npx marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "junit:merge": "npm junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
+    "test" : "npm run scripts || npm run posttest"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "cypress-grep": "^2.5.2",
+    "cypress-postgres": "^1.1.1",
+    "junit-merge": "^2.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^12.12.0",
+    "cypress-multi-reporters": "^1.6.1",
+    "mocha-junit-reporter": "^2.1.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
