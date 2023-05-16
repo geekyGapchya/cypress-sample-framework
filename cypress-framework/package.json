@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "clean:reports": "if exist cypress\\reports rmdir /s/q cypress\\reports && mkdir cypress\\reports mkdir cypress\\reports\\mochareports", 
+    "clean:reports": "if exist cypress\\reports rmdir /s/q cypress\\reports && mkdir cypress\\reports", 
     "pretest": "npm run clean:reports",
     "scripts": "cypress run --env grepTags=@Search",
-    "combine-reports": "npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    "generate-report": "npx marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "combine-reports": "npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
+    "generate-report": "npx marge cypress/reports/report.json -f report -o cypress/reports",
     "posttest": "npm run combine-reports && npm run generate-report",
     "junit:merge": "npm junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
     "test" : "npm run scripts || npm run posttest"

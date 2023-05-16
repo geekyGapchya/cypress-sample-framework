@@ -6,7 +6,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   video: false,
   screenshotOnRunFailure: true,
-  screenshotsFolder: "cypress/reports/mochareports/assets",
+  screenshotsFolder: "cypress/reports/assets",
   retries: {
     runMode: 0,
     openMode: 0,
